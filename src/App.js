@@ -77,18 +77,18 @@ this.setState({
 
 render() {
   const {store} = this.state
-
+  
   return (
      <main className='App'>
         <header className="App-header">
       <h1>Trelloyes!</h1>
     </header>
     <div className="App-list">
-      {this.state.lists.map(list => {
+      {store.lists.map(list => {
         return (
-          <List id= {list.id} list = {list} allCards={this.state.allCards}
-          onHandleRandomCard={this.handleRandomCard}
-          onHandleDelete={this.handleDelete}/>
+          <List id= {list.id} list = {list} allCards={this.state.store.allCards}
+          onClickRandomCard={this.handleRandomCard}
+          onClickDelete={this.handleDelete}/>
           
         )
       })}
